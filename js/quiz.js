@@ -16,7 +16,6 @@ let timerLineA = 0;
 let timerLineAnime;
 let ticker;
 
-/* ---------------- START QUIZ ---------------- */
 
 start_btn.addEventListener('click', () => {
     info_box.classList.add('activeInfo');
@@ -33,7 +32,6 @@ continue_btn.addEventListener('click', () => {
     loadQuestion(currentQuestion);
 });
 
-/* ---------------- LOAD QUESTION ---------------- */
 
 function loadQuestion(index) {
     reset();
@@ -53,7 +51,6 @@ function loadQuestion(index) {
     total_que.textContent = `${index + 1} / ${questions.length} questions`;
 }
 
-/* ---------------- NEXT BUTTON ---------------- */
 
 next_btn.addEventListener('click', () => {
     if (currentQuestion < questions.length - 1) {
@@ -66,7 +63,6 @@ next_btn.addEventListener('click', () => {
     }
 });
 
-/* ---------------- OPTION CLICK ---------------- */
 
 function optionClicked() {
     next_btn.style.display = "inline";
@@ -75,7 +71,6 @@ function optionClicked() {
     disableOptions();
 }
 
-/* ---------------- TIMER ---------------- */
 
 function timer() {
     timer_sec.textContent = timeTick;
@@ -89,7 +84,6 @@ function timer() {
     }
 }
 
-/* ---------------- TIMER LINE ---------------- */
 
 function timerLineFill() {
     time_line.style.width = timerLineA + 'px';
@@ -98,7 +92,6 @@ function timerLineFill() {
     }
 }
 
-/* ---------------- RESET TIMER ---------------- */
 
 function reset() {
     clearInterval(ticker);
@@ -112,7 +105,6 @@ function reset() {
     timerLineAnime = setInterval(timerLineFill, 100);
 }
 
-/* ---------------- DISABLE OPTIONS ---------------- */
 
 function disableOptions() {
     const options = option_list.querySelectorAll('.option');
